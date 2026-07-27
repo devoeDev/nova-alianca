@@ -20,9 +20,11 @@
     --radius-md: 14px;
     --radius-lg: 22px;
     --container: 1200px;
-    --header-height: 84px;
+    --header-height: 100px;
     --font-body: "Manrope", Arial, sans-serif;
     --font-display: "Oswald", Impact, sans-serif;
+    --ease-fluid: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-soft: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 *,
@@ -118,6 +120,12 @@ h3 {
 .section {
     position: relative;
     padding: 112px 0;
+    isolation: isolate;
+}
+
+.section > .container {
+    position: relative;
+    z-index: 2;
 }
 
 /* =========================================================
@@ -137,7 +145,7 @@ h3 {
     letter-spacing: 0.025em;
     line-height: 1;
     cursor: pointer;
-    transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+    transition: transform 420ms var(--ease-fluid), background-color 320ms ease, border-color 320ms ease, color 320ms ease, box-shadow 420ms var(--ease-fluid);
 }
 
 .button:hover {
@@ -253,7 +261,13 @@ h3 {
 
 /* Elementos controlados pela biblioteca Motion */
 [data-reveal] {
-    will-change: transform, opacity;
+    will-change: transform, opacity, filter;
+}
+
+[data-parallax] {
+    --parallax-y: 0px;
+    translate: 0 var(--parallax-y);
+    will-change: translate;
 }
 
 .motion-running [data-reveal] {
@@ -268,7 +282,13 @@ h3 {
     .button,
     .service-card,
     .advantage-card,
-    .process-card {
+    .process-card,
+    .welding-visual,
+    .welding-content,
+    .welding-spark,
+    .welding-core,
+    .welding-flare,
+    .welding-beam {
         transform: none !important;
         animation: none !important;
         transition-duration: 0.01ms !important;
@@ -284,12 +304,13 @@ h3 {
     z-index: 1000;
     height: var(--header-height);
     border-bottom: 1px solid transparent;
-    transition: background-color 200ms ease, border-color 200ms ease, backdrop-filter 200ms ease;
+    transition: background-color 360ms ease, border-color 360ms ease, backdrop-filter 360ms ease, box-shadow 360ms ease;
 }
 
 .site-header.is-scrolled {
     background: rgba(7, 7, 7, 0.88);
     border-color: var(--color-border);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(18px);
 }
 
@@ -308,19 +329,25 @@ h3 {
 
 .brand-logo {
     display: block;
-    width: clamp(150px, 17vw, 220px);
-    height: 58px;
+    width: clamp(220px, 23vw, 310px);
+    height: 82px;
     object-fit: contain;
     object-position: left center;
+    transition: transform 520ms var(--ease-fluid), filter 320ms ease;
+}
+
+.brand:hover .brand-logo {
+    transform: scale(1.025);
+    filter: brightness(1.08);
 }
 
 .brand-logo-footer {
-    width: min(220px, 100%);
-    height: 70px;
+    width: min(290px, 100%);
+    height: 90px;
 }
 
 .footer-brand {
-    max-width: 240px;
+    max-width: 310px;
 }
 
 .main-nav {
@@ -725,7 +752,7 @@ h3 {
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     overflow: hidden;
-    transition: transform 220ms ease, border-color 220ms ease, background-color 220ms ease;
+    transition: transform 520ms var(--ease-fluid), border-color 320ms ease, background-color 320ms ease, box-shadow 520ms var(--ease-fluid);
 }
 
 .service-card::before {
@@ -741,9 +768,10 @@ h3 {
 }
 
 .service-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-8px);
     background: #151515;
     border-color: var(--color-border-strong);
+    box-shadow: 0 22px 46px rgba(0, 0, 0, 0.24);
 }
 
 .service-card:hover::before {
@@ -822,6 +850,340 @@ h3 {
     background: var(--color-yellow);
 }
 
+
+/* =========================================================
+   SOLDAGEM INDUSTRIAL
+========================================================= */
+.welding-section {
+    min-height: 760px;
+    background:
+        radial-gradient(circle at 22% 48%, rgba(244, 196, 48, 0.12), transparent 27%),
+        linear-gradient(135deg, #090909 0%, #111111 54%, #080808 100%);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    overflow: hidden;
+}
+
+.welding-grid-lines {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.3;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.026) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.026) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: linear-gradient(90deg, black, transparent 78%);
+}
+
+.welding-layout {
+    display: grid;
+    grid-template-columns: minmax(440px, 1.05fr) minmax(0, 0.95fr);
+    align-items: center;
+    gap: 90px;
+}
+
+.welding-visual {
+    position: relative;
+    min-height: 540px;
+}
+
+.welding-glow {
+    position: absolute;
+    inset: 22% 12%;
+    background: #f4c430;
+    opacity: 0.12;
+    filter: blur(95px);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.welding-frame {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: 22px;
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.06), transparent 34%),
+        rgba(15, 15, 15, 0.92);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+.welding-frame::before,
+.welding-frame::after {
+    content: "";
+    position: absolute;
+    width: 74px;
+    height: 74px;
+    border-color: rgba(244, 196, 48, 0.62);
+    border-style: solid;
+    pointer-events: none;
+}
+
+.welding-frame::before {
+    top: 12px;
+    left: 12px;
+    border-width: 2px 0 0 2px;
+}
+
+.welding-frame::after {
+    right: 12px;
+    bottom: 12px;
+    border-width: 0 2px 2px 0;
+}
+
+.welding-status,
+.welding-metrics {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    color: var(--color-muted);
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+}
+
+.welding-status {
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.welding-status span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.welding-status i {
+    width: 7px;
+    height: 7px;
+    background: var(--color-yellow);
+    border-radius: 50%;
+    box-shadow: 0 0 18px rgba(244, 196, 48, 0.9);
+}
+
+.welding-status strong {
+    color: var(--color-white);
+}
+
+.welding-scene {
+    position: relative;
+    min-height: 380px;
+    overflow: hidden;
+}
+
+.welding-scene::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 57% 66%, rgba(255, 225, 115, 0.18), transparent 25%);
+    pointer-events: none;
+}
+
+.metal-plate {
+    position: absolute;
+    z-index: 1;
+    background:
+        repeating-linear-gradient(105deg, rgba(255, 255, 255, 0.05) 0 2px, transparent 2px 15px),
+        linear-gradient(180deg, #3b3b39, #161616);
+    border: 1px solid #545451;
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.08), 0 20px 45px rgba(0, 0, 0, 0.34);
+}
+
+.plate-horizontal {
+    left: 7%;
+    right: 5%;
+    bottom: 12%;
+    height: 92px;
+    transform: perspective(700px) rotateX(62deg) rotateZ(-4deg);
+}
+
+.plate-vertical {
+    right: 8%;
+    bottom: 18%;
+    width: 230px;
+    height: 230px;
+    transform: perspective(700px) rotateY(-52deg) rotateZ(1deg);
+}
+
+.welding-torch {
+    position: absolute;
+    z-index: 3;
+    top: 8%;
+    left: 7%;
+    width: 56%;
+    max-width: 310px;
+    filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.42));
+    transform: rotate(5deg);
+}
+
+.welding-core,
+.welding-flare,
+.welding-beam,
+.welding-spark {
+    position: absolute;
+    z-index: 5;
+    left: 58%;
+    top: 66%;
+    pointer-events: none;
+}
+
+.welding-core {
+    width: 16px;
+    height: 16px;
+    margin: -8px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow:
+        0 0 12px 4px #fff,
+        0 0 26px 10px #ffe385,
+        0 0 65px 22px rgba(244, 196, 48, 0.78);
+}
+
+.welding-flare {
+    width: 150px;
+    height: 150px;
+    margin: -75px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.92) 0 2%, rgba(255, 220, 96, 0.34) 14%, transparent 62%);
+    border-radius: 50%;
+    mix-blend-mode: screen;
+}
+
+.welding-beam {
+    width: 5px;
+    height: 88px;
+    margin: -85px 0 0 -3px;
+    background: linear-gradient(to top, #fff, #ffe78f 35%, transparent);
+    border-radius: 999px;
+    transform: rotate(43deg);
+    transform-origin: bottom;
+    filter: drop-shadow(0 0 9px #f4c430);
+    opacity: 0.72;
+}
+
+.welding-spark {
+    width: var(--size);
+    height: var(--size);
+    margin: calc(var(--size) / -2);
+    background: #fff6c2;
+    border-radius: 50%;
+    box-shadow: 0 0 8px 2px #f4c430;
+    animation: welding-spark 1.35s var(--ease-soft) infinite;
+    animation-delay: var(--delay);
+}
+
+@keyframes welding-spark {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 0, 0) scale(0.2);
+    }
+    12% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate3d(var(--tx), var(--ty), 0) scale(0.75);
+    }
+}
+
+.welding-metrics {
+    align-items: flex-end;
+    padding-top: 18px;
+    border-top: 1px solid var(--color-border);
+}
+
+.welding-metrics div {
+    display: grid;
+    gap: 5px;
+}
+
+.welding-metrics div:last-child {
+    text-align: right;
+}
+
+.welding-metrics small {
+    color: var(--color-muted);
+    font-size: 0.56rem;
+}
+
+.welding-metrics strong {
+    color: var(--color-white);
+    font-size: 0.68rem;
+}
+
+.welding-content h2 {
+    margin-bottom: 27px;
+    font-family: var(--font-display);
+    font-size: clamp(2.45rem, 5vw, 4.8rem);
+    font-weight: 600;
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+}
+
+.welding-content > p {
+    max-width: 610px;
+    margin-bottom: 31px;
+    color: var(--color-muted);
+    font-size: 1rem;
+}
+
+.welding-features {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.welding-features article {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 17px;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    transition: transform 420ms var(--ease-fluid), border-color 320ms ease, background-color 320ms ease;
+}
+
+.welding-features article:hover {
+    transform: translateX(7px);
+    background: rgba(244, 196, 48, 0.045);
+    border-color: var(--color-border-strong);
+}
+
+.welding-features svg {
+    width: 45px;
+    height: 45px;
+    padding: 10px;
+    background: rgba(244, 196, 48, 0.1);
+    border: 1px solid rgba(244, 196, 48, 0.26);
+    border-radius: var(--radius-sm);
+    color: var(--color-yellow);
+}
+
+.welding-features div {
+    display: grid;
+    gap: 3px;
+}
+
+.welding-features strong {
+    color: var(--color-white);
+    font-size: 0.86rem;
+}
+
+.welding-features span {
+    color: var(--color-muted);
+    font-size: 0.75rem;
+}
+
 /* =========================================================
    DIFERENCIAIS
 ========================================================= */
@@ -894,10 +1256,12 @@ h3 {
     background: rgba(17, 17, 17, 0.95);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
-    transition: border-color 200ms ease, transform 200ms ease;
+    transition: border-color 320ms ease, transform 520ms var(--ease-fluid), background-color 320ms ease;
 }
 
 .advantage-card:hover {
+    transform: translateX(7px);
+    background: #151515;
     border-color: var(--color-border-strong);
 }
 
@@ -977,7 +1341,7 @@ h3 {
     background: var(--color-yellow);
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 220ms ease;
+    transition: transform 520ms var(--ease-fluid);
 }
 
 .process-card:hover::after {
@@ -1419,7 +1783,12 @@ h3 {
 ========================================================= */
 @media (max-width: 1080px) {
     :root {
-        --header-height: 76px;
+        --header-height: 88px;
+    }
+
+    .brand-logo {
+        width: clamp(190px, 21vw, 235px);
+        height: 70px;
     }
 
     .main-nav {
@@ -1444,8 +1813,13 @@ h3 {
     }
 
     .advantages-layout,
-    .quote-layout {
+    .quote-layout,
+    .welding-layout {
         gap: 55px;
+    }
+
+    .welding-layout {
+        grid-template-columns: minmax(390px, 0.95fr) minmax(0, 1.05fr);
     }
 
     .process-grid {
@@ -1558,8 +1932,19 @@ h3 {
     }
 
     .advantages-layout,
-    .quote-layout {
+    .quote-layout,
+    .welding-layout {
         grid-template-columns: 1fr;
+    }
+
+    .welding-visual {
+        width: min(100%, 680px);
+        min-height: 520px;
+        margin-inline: auto;
+    }
+
+    .welding-content {
+        max-width: 760px;
     }
 
     .advantages-intro {
@@ -1586,7 +1971,7 @@ h3 {
 
 @media (max-width: 640px) {
     :root {
-        --header-height: 70px;
+        --header-height: 78px;
     }
 
     .container {
@@ -1598,13 +1983,13 @@ h3 {
     }
 
     .brand-logo {
-        width: clamp(132px, 44vw, 174px);
-        height: 48px;
+        width: clamp(170px, 54vw, 210px);
+        height: 60px;
     }
 
     .brand-logo-footer {
-        width: min(200px, 100%);
-        height: 64px;
+        width: min(240px, 100%);
+        height: 78px;
     }
 
     .hero {
@@ -1684,6 +2069,64 @@ h3 {
         gap: 46px;
     }
 
+    .welding-section {
+        min-height: 0;
+    }
+
+    .welding-layout {
+        gap: 44px;
+    }
+
+    .welding-visual {
+        min-height: 410px;
+    }
+
+    .welding-frame {
+        padding: 15px;
+    }
+
+    .welding-scene {
+        min-height: 285px;
+    }
+
+    .welding-status,
+    .welding-metrics {
+        font-size: 0.5rem;
+        letter-spacing: 0.08em;
+    }
+
+    .welding-metrics {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 9px;
+    }
+
+    .welding-metrics div:last-child {
+        text-align: left;
+    }
+
+    .welding-content h2 {
+        font-size: clamp(2.55rem, 13vw, 4rem);
+    }
+
+    .welding-content .button {
+        width: 100%;
+    }
+
+    .welding-torch {
+        top: 12%;
+        left: 1%;
+        width: 62%;
+    }
+
+    .welding-core,
+    .welding-flare,
+    .welding-beam,
+    .welding-spark {
+        left: 58%;
+        top: 65%;
+    }
+
     .advantage-card {
         grid-template-columns: 1fr;
         gap: 19px;
@@ -1701,6 +2144,11 @@ h3 {
 
     .process-card {
         min-height: 260px;
+    }
+
+    .welding-features article:hover,
+    .advantage-card:hover {
+        transform: none;
     }
 
     .process-card + .process-card,
@@ -1811,8 +2259,8 @@ h3 {
 .service-card,
 .advantage-card,
 .process-card,
+.welding-features article,
 .social-links a,
 .social-links button,
 .floating-whatsapp {
     transform: translateZ(0);
-}
