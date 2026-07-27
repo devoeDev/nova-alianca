@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#111111">
+
+    <title>Nova Aliança | Soluções Industriais e Estruturas Metálicas</title>
+    <meta
+        name="description"
+        content="Soluções industriais do projeto à execução: estruturas metálicas, coberturas, escadas, mezaninos, plataformas, guarda-corpos e manutenção industrial."
+    >
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Logo principal localizada na raiz do projeto -->
+    <link rel="preload" as="image" href="logo1.png">
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Biblioteca de ícones Lucide -->
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+
+    <!-- Motion: animações modernas sem necessidade de npm -->
+    <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js" defer></script>
+</head>
+<body>
+    <!-- Elementos decorativos de fundo -->
+    <div class="page-noise" aria-hidden="true"></div>
+
+    <!-- =========================================================
+         HEADER / NAVEGAÇÃO
+    ========================================================== -->
+    <header class="site-header" id="topo">
+        <div class="container header-inner">
+            <a class="brand" href="#inicio" aria-label="Nova Aliança - Página inicial">
+                <img
+                    class="brand-logo"
+                    src="logo1.png"
+                    alt="Nova Aliança Soluções Industriais"
+                    width="220"
+                    height="70"
+                >
+            </a>
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="main-navigation"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="main-nav" id="main-navigation" aria-label="Navegação principal">
+                <a href="#servicos">Serviços</a>
+                <a href="#diferenciais">Diferenciais</a>
+                <a href="#processo">Como trabalhamos</a>
+                <a href="#contato">Contato</a>
+
+                <a class="button button-sm button-primary nav-cta" href="#orcamento">
+                    Solicitar orçamento
+                    <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- =========================================================
+             HERO / PRIMEIRA DOBRA
+        ========================================================== -->
+        <section class="hero section" id="inicio">
+            <div class="hero-grid-lines" aria-hidden="true"></div>
+
+            <div class="container hero-layout">
+                <div class="hero-content" data-reveal data-motion-group="hero-copy">
+                    <div class="eyebrow">
+                        <span class="eyebrow-line"></span>
+                        Engenharia, fabricação e montagem
+                    </div>
+
+                    <h1>
+                        Estruturas que
+                        <span>sustentam grandes projetos.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Soluções industriais completas, do projeto à execução, com segurança,
+                        precisão técnica e materiais de alto padrão para sua obra avançar com confiança.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="button button-primary button-lg" href="#orcamento">
+                            Solicitar orçamento
+                            <i data-lucide="arrow-right" aria-hidden="true"></i>
+                        </a>
+
+                        <button
+                            class="button button-outline button-lg whatsapp-action"
+                            type="button"
+                            data-message="Olá! Gostaria de falar com um especialista da Nova Aliança sobre um projeto industrial."
+                        >
+                            <i data-lucide="message-circle" aria-hidden="true"></i>
+                            Falar com especialista
+                        </button>
+                    </div>
+
+                    <ul class="hero-trust" aria-label="Diferenciais principais">
+                        <li>
+                            <i data-lucide="shield-check" aria-hidden="true"></i>
+                            Segurança em cada etapa
+                        </li>
+                        <li>
+                            <i data-lucide="badge-check" aria-hidden="true"></i>
+                            Equipe especializada
+                        </li>
+                        <li>
+                            <i data-lucide="ruler" aria-hidden="true"></i>
+                            Execução sob medida
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="hero-visual" data-reveal data-delay="150" data-motion-group="hero-visual">
+                    <div class="visual-glow" aria-hidden="true"></div>
+
+                    <div class="industrial-panel">
+                        <div class="panel-topline">
+                            <span>PROJETO NA-2026</span>
+                            <span>STATUS: EM EXECUÇÃO</span>
+                        </div>
+
+                        <!-- Ilustração vetorial industrial -->
+                        <svg
+                            class="industrial-drawing"
+                            viewBox="0 0 680 540"
+                            role="img"
+                            aria-label="Ilustração técnica de uma estrutura metálica industrial"
+                        >
+                            <defs>
+                                <linearGradient id="metalGradient" x1="0" y1="0" x2="1" y2="1">
+                                    <stop offset="0%" stop-color="#f4c430" stop-opacity="0.95" />
+                                    <stop offset="100%" stop-color="#9f7610" stop-opacity="0.45" />
+                                </linearGradient>
+                                <pattern id="blueprintGrid" width="34" height="34" patternUnits="userSpaceOnUse">
+                                    <path d="M 34 0 L 0 0 0 34" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" />
+                                </pattern>
+                            </defs>
+
+                            <rect width="680" height="540" fill="url(#blueprintGrid)" />
+
+                            <g fill="none" stroke="url(#metalGradient)" stroke-width="7" stroke-linecap="square" stroke-linejoin="miter">
+                                <path d="M105 430V215L340 84L575 215V430" />
+                                <path d="M105 215H575" />
+                                <path d="M153 430V245H527V430" />
+                                <path d="M210 430V245M283 430V245M397 430V245M470 430V245" />
+                                <path d="M105 215L153 245L210 215L283 245L340 215L397 245L470 215L527 245L575 215" />
+                                <path d="M153 245L210 430M210 245L153 430" opacity="0.45" />
+                                <path d="M470 245L527 430M527 245L470 430" opacity="0.45" />
+                            </g>
+
+                            <g fill="none" stroke="#d7d7d7" stroke-opacity="0.46" stroke-width="2">
+                                <path d="M72 463H607" />
+                                <path d="M89 482H590" stroke-dasharray="10 10" />
+                                <path d="M77 202V439" stroke-dasharray="7 7" />
+                                <path d="M603 202V439" stroke-dasharray="7 7" />
+                                <path d="M74 198L100 198M580 198L606 198" />
+                                <path d="M68 433L94 433M586 433L612 433" />
+                            </g>
+
+                            <g fill="#f4c430">
+                                <circle cx="105" cy="215" r="8" />
+                                <circle cx="340" cy="84" r="8" />
+                                <circle cx="575" cy="215" r="8" />
+                                <circle cx="153" cy="430" r="7" />
+                                <circle cx="527" cy="430" r="7" />
+                            </g>
+
+                            <g fill="#efefef" font-family="Manrope, sans-serif" font-size="13" font-weight="700" letter-spacing="2">
+                                <text x="92" y="188">EIXO A</text>
+                                <text x="543" y="188">EIXO F</text>
+                                <text x="299" y="58">COBERTURA</text>
+                                <text x="260" y="510">ESTRUTURA PRINCIPAL</text>
+                            </g>
+                        </svg>
+
+                        <div class="panel-footer">
+                            <div>
+                                <small>ESCOPO</small>
+                                <strong>PROJETO + EXECUÇÃO</strong>
+                            </div>
+                            <div>
+                                <small>PADRÃO</small>
+                                <strong>ALTA PERFORMANCE</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="floating-badge badge-quality">
+                        <i data-lucide="shield-check" aria-hidden="true"></i>
+                        <span>
+                            <small>Compromisso com</small>
+                            SEGURANÇA
+                        </span>
+                    </div>
+
+                    <div class="floating-badge badge-experience">
+                        <strong>360°</strong>
+                        <span>Projeto à execução</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container stats-strip" data-reveal data-motion-group="stats">
+                <article>
+                    <strong>01</strong>
+                    <span>Atendimento técnico e levantamento da necessidade</span>
+                </article>
+                <article>
+                    <strong>02</strong>
+                    <span>Planejamento, fabricação e controle de qualidade</span>
+                </article>
+                <article>
+                    <strong>03</strong>
+                    <span>Montagem segura e entrega conforme o projeto</span>
+                </article>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             SERVIÇOS
+        ========================================================== -->
+        <section class="section services-section" id="servicos">
+            <div class="container">
+                <div class="section-heading" data-reveal>
+                    <div>
+                        <span class="section-kicker">Nossos serviços</span>
+                        <h2>Soluções robustas para demandas industriais.</h2>
+                    </div>
+
+                    <p>
+                        Atuação completa em fabricação, montagem e manutenção de estruturas,
+                        com soluções desenvolvidas para cada necessidade operacional.
+                    </p>
+                </div>
+
+                <div class="services-grid">
+                    <article class="service-card featured" data-reveal>
+                        <div class="service-number">01</div>
+                        <div class="service-icon">
+                            <i data-lucide="warehouse" aria-hidden="true"></i>
+                        </div>
+                        <h3>Coberturas metálicas</h3>
+                        <p>
+                            Coberturas para galpões, áreas produtivas, estacionamentos e espaços comerciais,
+                            com dimensionamento adequado e acabamento profissional.
+                        </p>
+                        <ul>
+                            <li>Galpões e áreas industriais</li>
+                            <li>Ampliações e adequações</li>
+                            <li>Estruturas sob medida</li>
+                        </ul>
+                    </article>
+
+                    <article class="service-card" data-reveal data-delay="80">
+                        <div class="service-number">02</div>
+                        <div class="service-icon">
+                            <i data-lucide="construction" aria-hidden="true"></i>
+                        </div>
+                        <h3>Estruturas metálicas</h3>
+                        <p>
+                            Fabricação e montagem de estruturas para projetos industriais, comerciais e civis,
+                            com foco em resistência, precisão e durabilidade.
+                        </p>
+                        <ul>
+                            <li>Pórticos e treliças</li>
+                            <li>Reforços estruturais</li>
+                            <li>Fabricação personalizada</li>
+                        </ul>
+                    </article>
+
+                    <article class="service-card" data-reveal data-delay="160">
+                        <div class="service-number">03</div>
+                        <div class="service-icon">
+                            <i data-lucide="stairs" aria-hidden="true"></i>
+                        </div>
+                        <h3>Escadas e mezaninos</h3>
+                        <p>
+                            Soluções para acesso, circulação e aproveitamento inteligente de áreas,
+                            respeitando as necessidades do ambiente e da operação.
+                        </p>
+                        <ul>
+                            <li>Escadas industriais</li>
+                            <li>Mezaninos metálicos</li>
+                            <li>Acessos técnicos</li>
+                        </ul>
+                    </article>
+
+                    <article class="service-card" data-reveal>
+                        <div class="service-number">04</div>
+                        <div class="service-icon">
+                            <i data-lucide="panels-top-left" aria-hidden="true"></i>
+                        </div>
+                        <h3>Plataformas industriais</h3>
+                        <p>
+                            Plataformas de trabalho, inspeção e manutenção desenvolvidas para proporcionar
+                            acesso seguro a máquinas, equipamentos e áreas elevadas.
+                        </p>
+                        <ul>
+                            <li>Plataformas de operação</li>
+                            <li>Passarelas técnicas</li>
+                            <li>Adequação de acessos</li>
+                        </ul>
+                    </article>
+
+                    <article class="service-card" data-reveal data-delay="80">
+                        <div class="service-number">05</div>
+                        <div class="service-icon">
+                            <i data-lucide="shield" aria-hidden="true"></i>
+                        </div>
+                        <h3>Corrimãos e guarda-corpos</h3>
+                        <p>
+                            Sistemas de proteção e apoio para circulação segura em escadas, passarelas,
+                            plataformas, mezaninos e demais áreas de risco.
+                        </p>
+                        <ul>
+                            <li>Proteção de áreas elevadas</li>
+                            <li>Corrimãos industriais</li>
+                            <li>Soluções personalizadas</li>
+                        </ul>
+                    </article>
+
+                    <article class="service-card" data-reveal data-delay="160">
+                        <div class="service-number">06</div>
+                        <div class="service-icon">
+                            <i data-lucide="settings" aria-hidden="true"></i>
+                        </div>
+                        <h3>Manutenção industrial</h3>
+                        <p>
+                            Serviços corretivos e preventivos para preservar a segurança, a disponibilidade
+                            e o desempenho de estruturas e componentes industriais.
+                        </p>
+                        <ul>
+                            <li>Reparos e reforços</li>
+                            <li>Substituição de componentes</li>
+                            <li>Adequações estruturais</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             DIFERENCIAIS / POR QUE ESCOLHER
+        ========================================================== -->
+        <section class="section advantages-section" id="diferenciais">
+            <div class="container advantages-layout">
+                <div class="advantages-intro" data-reveal>
+                    <span class="section-kicker">Por que escolher a Nova Aliança?</span>
+                    <h2>Força técnica para entregar com confiança.</h2>
+                    <p>
+                        Cada projeto é conduzido com planejamento, responsabilidade e atenção aos detalhes.
+                        Nosso compromisso é entregar uma solução segura, funcional e preparada para durar.
+                    </p>
+
+                    <div class="technical-note">
+                        <i data-lucide="clipboard-check" aria-hidden="true"></i>
+                        <div>
+                            <strong>Atendimento consultivo</strong>
+                            <span>
+                                Entendemos a necessidade antes de definir a melhor solução para o projeto.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="advantages-list">
+                    <article class="advantage-card" data-reveal>
+                        <div class="advantage-icon">
+                            <i data-lucide="shield-check" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <span>01</span>
+                            <h3>Segurança</h3>
+                            <p>
+                                Processos planejados para reduzir riscos e garantir uma execução responsável
+                                em todas as etapas do serviço.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="advantage-card" data-reveal data-delay="100">
+                        <div class="advantage-icon">
+                            <i data-lucide="gem" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <span>02</span>
+                            <h3>Qualidade</h3>
+                            <p>
+                                Materiais selecionados, fabricação cuidadosa e acabamento profissional para
+                                soluções com resistência e alto padrão.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="advantage-card" data-reveal data-delay="200">
+                        <div class="advantage-icon">
+                            <i data-lucide="handshake" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <span>03</span>
+                            <h3>Compromisso</h3>
+                            <p>
+                                Equipe especializada, comunicação transparente e foco em cumprir o escopo
+                                acordado com o cliente.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             PROCESSO DE TRABALHO
+        ========================================================== -->
+        <section class="section process-section" id="processo">
+            <div class="container">
+                <div class="section-heading compact" data-reveal>
+                    <div>
+                        <span class="section-kicker">Do projeto à execução</span>
+                        <h2>Um processo claro. Uma entrega consistente.</h2>
+                    </div>
+                </div>
+
+                <div class="process-grid">
+                    <article class="process-card" data-reveal>
+                        <span class="process-index">01</span>
+                        <i data-lucide="messages-square" aria-hidden="true"></i>
+                        <h3>Entendimento</h3>
+                        <p>
+                            Analisamos sua necessidade, contexto operacional, dimensões e expectativas.
+                        </p>
+                    </article>
+
+                    <article class="process-card" data-reveal data-delay="80">
+                        <span class="process-index">02</span>
+                        <i data-lucide="drafting-compass" aria-hidden="true"></i>
+                        <h3>Planejamento</h3>
+                        <p>
+                            Definimos a solução, os materiais, o escopo e as etapas de execução.
+                        </p>
+                    </article>
+
+                    <article class="process-card" data-reveal data-delay="160">
+                        <span class="process-index">03</span>
+                        <i data-lucide="factory" aria-hidden="true"></i>
+                        <h3>Fabricação</h3>
+                        <p>
+                            Produzimos os componentes com controle de medidas, qualidade e acabamento.
+                        </p>
+                    </article>
+
+                    <article class="process-card" data-reveal data-delay="240">
+                        <span class="process-index">04</span>
+                        <i data-lucide="hard-hat" aria-hidden="true"></i>
+                        <h3>Montagem</h3>
+                        <p>
+                            Executamos a instalação com organização, segurança e atenção ao projeto.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             FORMULÁRIO DE ORÇAMENTO
+        ========================================================== -->
+        <section class="section quote-section" id="orcamento">
+            <div class="container quote-layout">
+                <div class="quote-content" data-reveal>
+                    <span class="section-kicker">Solicite uma análise</span>
+                    <h2>Conte sobre o seu projeto.</h2>
+                    <p>
+                        Envie as informações iniciais e fale diretamente com nossa equipe pelo WhatsApp.
+                        Quanto mais detalhes você fornecer, mais objetivo será o primeiro atendimento.
+                    </p>
+
+                    <div class="quote-points">
+                        <div>
+                            <i data-lucide="check" aria-hidden="true"></i>
+                            Atendimento para projetos industriais e comerciais
+                        </div>
+                        <div>
+                            <i data-lucide="check" aria-hidden="true"></i>
+                            Soluções personalizadas conforme sua necessidade
+                        </div>
+                        <div>
+                            <i data-lucide="check" aria-hidden="true"></i>
+                            Contato direto com uma equipe especializada
+                        </div>
+                    </div>
+
+                    <div class="direct-contact">
+                        <span>Prefere contato direto?</span>
+                        <button
+                            type="button"
+                            class="text-link whatsapp-action"
+                            data-message="Olá! Quero solicitar um orçamento para um projeto industrial."
+                        >
+                            Chamar no WhatsApp
+                            <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="quote-form-wrapper" data-reveal data-delay="120">
+                    <div class="form-heading">
+                        <span>ORÇAMENTO</span>
+                        <strong>Retorno comercial</strong>
+                    </div>
+
+                    <form class="quote-form" id="quote-form" novalidate>
+                        <div class="field-grid">
+                            <div class="form-field">
+                                <label for="name">Nome completo *</label>
+                                <input
+                                    id="name"
+                                    name="name"
+                                    type="text"
+                                    autocomplete="name"
+                                    placeholder="Digite seu nome"
+                                    required
+                                >
+                                <small class="field-error"></small>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="company">Empresa</label>
+                                <input
+                                    id="company"
+                                    name="company"
+                                    type="text"
+                                    autocomplete="organization"
+                                    placeholder="Nome da empresa"
+                                >
+                                <small class="field-error"></small>
+                            </div>
+                        </div>
+
+                        <div class="field-grid">
+                            <div class="form-field">
+                                <label for="phone">Telefone / WhatsApp *</label>
+                                <input
+                                    id="phone"
+                                    name="phone"
+                                    type="tel"
+                                    inputmode="tel"
+                                    autocomplete="tel"
+                                    placeholder="(79) 99999-9999"
+                                    required
+                                >
+                                <small class="field-error"></small>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="service">Serviço de interesse *</label>
+                                <select id="service" name="service" required>
+                                    <option value="">Selecione</option>
+                                    <option>Cobertura metálica</option>
+                                    <option>Estrutura metálica</option>
+                                    <option>Escada ou mezanino</option>
+                                    <option>Plataforma industrial</option>
+                                    <option>Corrimão ou guarda-corpo</option>
+                                    <option>Manutenção industrial</option>
+                                    <option>Outro serviço</option>
+                                </select>
+                                <small class="field-error"></small>
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="message">Descreva brevemente o projeto *</label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="5"
+                                placeholder="Ex.: preciso de uma cobertura metálica para uma área de aproximadamente 300 m²..."
+                                required
+                            ></textarea>
+                            <small class="field-error"></small>
+                        </div>
+
+                        <label class="privacy-check">
+                            <input type="checkbox" id="privacy" name="privacy" required>
+                            <span>
+                                Autorizo o contato da Nova Aliança para dar continuidade ao atendimento.
+                            </span>
+                        </label>
+                        <small class="field-error privacy-error"></small>
+
+                        <button class="button button-primary button-lg submit-button" type="submit">
+                            Enviar solicitação pelo WhatsApp
+                            <i data-lucide="send" aria-hidden="true"></i>
+                        </button>
+
+                        <p class="form-note">
+                            Seus dados serão utilizados somente para responder à solicitação.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             CTA FINAL
+        ========================================================== -->
+        <section class="final-cta" id="contato">
+            <div class="container final-cta-inner" data-reveal>
+                <div>
+                    <span class="section-kicker">Seu próximo projeto começa aqui</span>
+                    <h2>Vamos tirar seu projeto do papel?</h2>
+                    <p>
+                        Fale com a Nova Aliança e encontre a solução industrial ideal para sua necessidade.
+                    </p>
+                </div>
+
+                <button
+                    class="button button-dark button-xl whatsapp-action"
+                    type="button"
+                    data-message="Olá! Quero tirar um projeto do papel e gostaria de solicitar um orçamento com a Nova Aliança."
+                >
+                    Solicitar orçamento agora
+                    <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand-column">
+                <a class="brand footer-brand" href="#inicio" aria-label="Nova Aliança - Voltar ao início">
+                    <img
+                        class="brand-logo brand-logo-footer"
+                        src="logo1.png"
+                        alt="Nova Aliança Soluções Industriais"
+                        width="220"
+                        height="70"
+                        loading="lazy"
+                    >
+                </a>
+
+                <p>
+                    Soluções industriais e estruturas metálicas com segurança, qualidade e compromisso,
+                    do projeto à execução.
+                </p>
+
+                <div class="social-links" aria-label="Redes sociais">
+                    <a href="#" aria-label="Instagram da Nova Aliança">
+                        <i data-lucide="instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" aria-label="Facebook da Nova Aliança">
+                        <i data-lucide="facebook" aria-hidden="true"></i>
+                    </a>
+                    <button
+                        type="button"
+                        class="whatsapp-action"
+                        data-message="Olá! Vim pelo site da Nova Aliança e gostaria de mais informações."
+                        aria-label="WhatsApp da Nova Aliança"
+                    >
+                        <i data-lucide="message-circle" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Navegação</h3>
+                <a href="#servicos">Serviços</a>
+                <a href="#diferenciais">Diferenciais</a>
+                <a href="#processo">Como trabalhamos</a>
+                <a href="#orcamento">Solicitar orçamento</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contato</h3>
+                <a href="tel:+5579999999999">
+                    <i data-lucide="phone" aria-hidden="true"></i>
+                    (79) 99999-9999
+                </a>
+                <a href="mailto:contato@novaalianca.com.br">
+                    <i data-lucide="mail" aria-hidden="true"></i>
+                    contato@novaalianca.com.br
+                </a>
+                <span>
+                    <i data-lucide="map-pin" aria-hidden="true"></i>
+                    Sergipe e região
+                </span>
+            </div>
+
+            <div class="footer-column">
+                <h3>Atendimento</h3>
+                <span>Segunda a sexta</span>
+                <strong>08h às 18h</strong>
+                <span>Sábado</span>
+                <strong>08h às 12h</strong>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>
+                © <span id="current-year"></span> Nova Aliança. Todos os direitos reservados.
+            </p>
+            <a href="#topo">Voltar ao topo <i data-lucide="arrow-up" aria-hidden="true"></i></a>
+        </div>
+    </footer>
+
+    <!-- Botão flutuante do WhatsApp -->
+    <button
+        class="floating-whatsapp whatsapp-action"
+        type="button"
+        data-message="Olá! Vim pelo site da Nova Aliança e gostaria de solicitar um orçamento."
+        aria-label="Solicitar orçamento pelo WhatsApp"
+    >
+        <i data-lucide="message-circle" aria-hidden="true"></i>
+        <span>Orçamento</span>
+    </button>
+
+    <!-- JavaScript principal -->
+    <script src="assets/js/script.js" defer></script>
+</body>
+</html>
